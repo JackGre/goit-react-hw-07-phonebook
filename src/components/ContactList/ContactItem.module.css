@@ -1,0 +1,26 @@
+.ContactItem:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.ContactItem {
+  font-size: large;
+  font-weight: 500;
+}
+
+.ContactItem button {
+  cursor: pointer;
+  transition: all 250ms ease;
+  border: 2px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  outline: none;
+
+  padding: 3px 6px;
+  font-size: 12px;
+
+  margin-left: 20px;
+}
+
+.ContactItem button:hover {
+  background-color: orangered;
+}

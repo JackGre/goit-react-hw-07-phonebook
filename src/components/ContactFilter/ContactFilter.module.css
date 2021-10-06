@@ -1,0 +1,26 @@
+.Filter {
+  width: 500px;
+  margin-bottom: 15px;
+}
+
+.Filter label {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2;
+}
+
+.Filter input {
+  width: 350px;
+  padding: 5px;
+
+  border-color: 2px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 250ms ease;
+  outline: none;
+}
+
+.Filter input:hover,
+.Filter input:focus {
+  border-color: orangered;
+}
