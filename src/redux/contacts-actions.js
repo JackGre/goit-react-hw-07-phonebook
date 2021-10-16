@@ -12,7 +12,7 @@ export const addContact = createAction('contact/add', ({ name, number }) => {
 });
 
 export const deleteContact = createAction('contacts/delete');
-export const filterContact = createAction('contacts/filter');
+export const filterContacts = createAction('contacts/filter');
 
 export const fetchContactRequest = createAction('contacts/fetchContactRequest');
 export const fetchContactSuccess = createAction('contacts/fetchContactSuccess');

@@ -1,7 +1,8 @@
 import { createReducer, combineReducers } from "@reduxjs/toolkit";
 import * as contactsActions from './contacts-actions';
 
-const BASE_URL = 'http://localhost:3005';
+
+const BASE_URL = 'http://localhost:3002';
 
 function addContact(contact) {
     const options = {
@@ -23,7 +24,7 @@ function removeContact(contactId) {
 };
 
 const contacts = createReducer([], {
-    [contactsActions.fetchContactSuccess]: (_, action) => action.payload,
+    [contactsActions.fetchContactSuccess]: (_, action) => [...action.payload],
     [contactsActions.addContact]: (state, {payload}) => {
         const nameContact = state.map(e => e.name.toLowerCase());
         if (nameContact.includes(payload.name.toLowerCase())) {
@@ -45,14 +46,13 @@ const isLoading = createReducer(false, {
     [contactsActions.fetchContactError]: () => false,
         
 });
+const filter = createReducer('', {
+    [contactsActions.filterContacts]: (_, {payload}) => payload,
+});
 
 const error = createReducer(null, {
     [contactsActions.fetchContactError]: (_, action) => action.payload,
     [contactsActions.fetchContactRequest]: () => null,
-});
-
-const filter = createReducer('', {
-    [contactsActions.filterContact]: (_, action) => action.payload
 });
 
 
